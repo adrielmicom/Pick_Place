@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Actualizar la ruta de la carpeta por la correcta:
     #with open("/home/diego/ws_moveit/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
     #        model_xml = f.read()
-    with open("/home/adri2/Workspace/3.3/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
+    with open("/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
             model_xml = f.read()    
     
 
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     # Actualizar la ruta de la carpeta por la correcta:
     #with open("/home/diego/ws_moveit/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
     #        model_xml = f.read()
-    with open("/home/adri2/Workspace/3.3/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
+    with open("/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
             model_xml = f.read()    
     
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # Actualizar la ruta de la carpeta por la correcta:
     #with open("/home/diego/ws_moveit/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
     #        model_xml = f.read()
-    with open("/home/adri2/Workspace/3.3/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
+    with open("/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
             model_xml = f.read()    
     
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # Actualizar la ruta de la carpeta por la correcta:
     #with open("/home/diego/ws_moveit/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
     #        model_xml = f.read()
-    with open("/home/adri2/Workspace/3.3/src/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
+    with open("/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/models/{}/model.sdf".format(model_name), "r") as f:
             model_xml = f.read()    
     
 
