@@ -16,12 +16,15 @@ Permitir salida grafica en ubuntu, en una consola
 	xhost +
 
 Descargar imagen seminario
+
 	docker pull adrielmicom/pick_place_seminario:2
 
 LANZAR CONTENEDOR
+
 	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:1
 
 Abrir terminales de tu contenedor
+
 	docker exec -it seminario /bin/bash
 
 
