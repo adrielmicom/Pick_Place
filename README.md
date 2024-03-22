@@ -11,27 +11,29 @@ RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_
 
 
 # USO 
-Permitir salida grafica en ubuntu, en una consola ->  xhost +
+Permitir salida grafica en ubuntu, en una consola ->  
+	xhost +
 
-Descargar imagen seminario ->   docker pull adrielmicom/pick_place_seminario:2
+Descargar imagen seminario ->
+	docker pull adrielmicom/pick_place_seminario:2
 
 LANZAR CONTENEDOR ->
-docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:1
+	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:1
 
 Abrir terminales de tu contenedor ->  docker exec -it seminario /bin/bash
 
 
 # Las aplicaciones se abren cuando se lo pides en su terminal.
-roslaunch irb120_robotiq85_gazebo warehouse.launch    #abrira gazebo y Rviz
-code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src	#abre VSCODE
+	roslaunch irb120_robotiq85_gazebo warehouse.launch    #abrira gazebo y Rviz
+	code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src	#abre VSCODE
 
-	SI TE APETECE LANZAR MI CODIGO 
-rosrun irb120_robotiq85_gazebo spawn_model.py
-cd /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
-python3 Pick3.py
+SI TE APETECE LANZAR MI CODIGO 
+	rosrun irb120_robotiq85_gazebo spawn_model.py
+	cd /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
+	python3 Pick3.py
 
 
-rosrun irb120_robotiq85_gazebo FK.py     #lanzar un codigo demo
+	rosrun irb120_robotiq85_gazebo FK.py     #lanzar un codigo demo
 
 Ruta codigos /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src           	
 
