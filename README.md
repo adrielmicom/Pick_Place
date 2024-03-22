@@ -21,10 +21,12 @@ docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-un
 Abrir terminales de tu contenedor ->  docker exec -it seminario /bin/bash
 
 
-roslaunch irb120_robotiq85_gazebo warehouse.launch
+# Las aplicaciones se abren cuando se lo pides en su terminal.
+roslaunch irb120_robotiq85_gazebo warehouse.launch    #abrira gazebo y Rviz
+
 rosrun irb120_robotiq85_gazebo FK.py
 
-Ruta codigos /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
+Ruta codigos /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src           	#abre VSCODE
 
 
 code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
