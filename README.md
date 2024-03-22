@@ -21,7 +21,7 @@ Descargar imagen seminario
 
 LANZAR CONTENEDOR
 
-	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:1
+	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:2
 
 Abrir terminales de tu contenedor
 
@@ -30,8 +30,11 @@ Abrir terminales de tu contenedor
 
 # Las aplicaciones se abren cuando se lo pides en su terminal.
 abrira gazebo y Rviz
+
 	roslaunch irb120_robotiq85_gazebo warehouse.launch
+	
 abre VSCODE
+
 	code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src	
 
 SI TE APETECE LANZAR MI CODIGO
@@ -43,6 +46,7 @@ SI TE APETECE LANZAR MI CODIGO
 	python3 Pick3.py
 
 lanzar un codigo demo
+
 	rosrun irb120_robotiq85_gazebo FK.py
 
 Ruta codigos
