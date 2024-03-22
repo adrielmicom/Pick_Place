@@ -24,14 +24,16 @@ Abrir terminales de tu contenedor ->  docker exec -it seminario /bin/bash
 # Las aplicaciones se abren cuando se lo pides en su terminal.
 roslaunch irb120_robotiq85_gazebo warehouse.launch    #abrira gazebo y Rviz
 
-rosrun irb120_robotiq85_gazebo FK.py
+rosrun irb120_robotiq85_gazebo FK.py     #lanzar un codigo demo
 
 Ruta codigos /catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src           	#abre VSCODE
 
 
 code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
 
-#datos parametros lanzamiento 
+# EXPLICAICON parametros lanzamiento 
+
+
 -it: Este parámetro indica a Docker que el contenedor se ejecutará en modo interactivo y con una terminal de pseudo-TTY asignada. Esto es útil para interactuar con el contenedor.
 
 --gpus all: Este parámetro indica a Docker que debe asignar todos los recursos de GPU disponibles en el sistema al contenedor. Esto es útil si tu aplicación dentro del contenedor requiere aceleración de GPU.
