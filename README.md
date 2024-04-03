@@ -3,7 +3,7 @@ Permitir salida grafica en ubuntu, en una consola
 
 	xhost +
  
-OPCION 1
+OPCION 1 VS dentro del contenedor
 Descargar imagen seminario
 
 	docker pull adrielmicom/pick_place_seminario:4
@@ -12,7 +12,7 @@ LANZAR CONTENEDOR
 
 	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:4
 
-OPCION 2
+OPCION 2  sin editor en el contenedo
  Descargar imagen seminario
 
 	docker pull adrielmicom/pick_place_seminario:3
