@@ -5,7 +5,7 @@ Permitir salida grafica en ubuntu, en una consola
 
 Descargar imagen seminario
 
-	docker pull adrielmicom/pick_place_seminario:2
+	docker pull adrielmicom/pick_place_seminario:4
 
 LANZAR CONTENEDOR
 
