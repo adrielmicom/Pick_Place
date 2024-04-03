@@ -1,15 +1,3 @@
-# Pick_Place
-Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
-
-# Clonar los repositorios desde GitHub en el directorio catkin_ws/src
-RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
-    && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
-    && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs
-
-
-
-
-
 # USO 
 Permitir salida grafica en ubuntu, en una consola
 
@@ -69,3 +57,13 @@ Ruta codigos
 -v $HOME/.Xauthority:/root/.Xauthority: Este parámetro monta el archivo de autoridad del servidor X del host en el mismo lugar dentro del contenedor. Esto es necesario para que las aplicaciones dentro del contenedor puedan autenticarse correctamente con el servidor X del host.
 
 -e XAUTHORITY=/root/.Xauthority: Este parámetro establece la variable de entorno XAUTHORITY dentro del contenedor para que coincida con el archivo de autoridad del servidor X del host. Esto es necesario para que las aplicaciones dentro del contenedor puedan autenticarse correctamente con el servidor X del host.
+
+
+#NO NECESARIO
+# Pick_Place
+Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
+
+# Clonar los repositorios desde GitHub en el directorio catkin_ws/src
+RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
+    && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
+    && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs
