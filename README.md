@@ -1,27 +1,26 @@
-# Pick_Place
-Paquete del ejercicio Pick_Place para seminario(Contiene PLugin Grasp) para desarrollo de DockerFile 
-
-# Repos para crear la imagen docker
-RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
-    && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
-    && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs
-
-
-
-
-
 # USO 
 Permitir salida grafica en ubuntu, en una consola
 
 	xhost +
-
+ 
+OPCION 1
 Descargar imagen seminario
 
-	docker pull adrielmicom/pick_place_seminario:2
+	docker pull adrielmicom/pick_place_seminario:4
 
 LANZAR CONTENEDOR
 
-	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:2
+	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:4
+
+OPCION 2
+ Descargar imagen seminario
+
+	docker pull adrielmicom/pick_place_seminario:3
+
+LANZAR CONTENEDOR
+
+	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared:/catkin_ws/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:3
+ Fin opcion 2
 
 Abrir terminales de tu contenedor
 
@@ -69,3 +68,13 @@ Ruta codigos
 -v $HOME/.Xauthority:/root/.Xauthority: Este parámetro monta el archivo de autoridad del servidor X del host en el mismo lugar dentro del contenedor. Esto es necesario para que las aplicaciones dentro del contenedor puedan autenticarse correctamente con el servidor X del host.
 
 -e XAUTHORITY=/root/.Xauthority: Este parámetro establece la variable de entorno XAUTHORITY dentro del contenedor para que coincida con el archivo de autoridad del servidor X del host. Esto es necesario para que las aplicaciones dentro del contenedor puedan autenticarse correctamente con el servidor X del host.
+
+
+#NO NECESARIO
+# Pick_Place
+Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
+
+# Clonar los repositorios desde GitHub en el directorio catkin_ws/src
+RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
+    && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
+    && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs
