@@ -3,7 +3,8 @@ Permitir salida grafica en ubuntu, en una consola
 
 	xhost +
  
-OPCION 1 VS dentro del contenedor
+
+# OPCION 1 VS dentro del contenedor
 Descargar imagen seminario
 
 	docker pull adrielmicom/pick_place_seminario:4
@@ -12,15 +13,34 @@ LANZAR CONTENEDOR
 
 	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:4
 
-OPCION 2  sin editor en el contenedo
- Descargar imagen seminario
+
+# OPCION 2  sin editor en el contenedo
+# Creacion paquete pre lanzamiento docker 
+
+Creacion de una carpeta docker_shared
+
+	mkdir docker_shared
+	cd docker_shared 
+	catkin_create_pkg mipaquete
+		
+Descargar imagen seminario
 
 	docker pull adrielmicom/pick_place_seminario:3
 
 LANZAR CONTENEDOR
 
 	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared/mipaquete:/catkin_ws/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario1 adrielmicom/pick_place_seminario:3
+	
+	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared/mipaquete:/workspace/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario1 adrielmicom/pick_place_seminario:3
 
+
+Dentro del contenedor
+
+	cd workspace
+	catkin init
+	catkin_make
+	source workspace/devel/setup.bash
+	rosrun mipaquete Pick3.py
  Fin opcion 2
 
 Abrir terminales de tu contenedor
@@ -70,21 +90,6 @@ Ruta codigos
 
 -e XAUTHORITY=/root/.Xauthority: Este parámetro establece la variable de entorno XAUTHORITY dentro del contenedor para que coincida con el archivo de autoridad del servidor X del host. Esto es necesario para que las aplicaciones dentro del contenedor puedan autenticarse correctamente con el servidor X del host.
 
-
-
-# Creacion paquete pre lanzamiento docker 
-
-Creacion de una carpeta docker_shared
-
-	mkdir docker_shared
-	cd docker_shared 
-	catkin_create_pkg mipaquete
-	
-	
-Dentro del contenedor
-
-	cd catkin_ws
-	catkin_make
 
 
 #NO NECESARIO
