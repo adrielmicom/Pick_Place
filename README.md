@@ -19,7 +19,7 @@ OPCION 2
 
 LANZAR CONTENEDOR
 
-	docker run -it --gpus all -v /home/adri2/Workspace/mipaquete:/catkin_ws/src -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:3
+	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared:/catkin_ws/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:3
  Fin opcion 2
 
 Abrir terminales de tu contenedor
