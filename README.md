@@ -1,3 +1,4 @@
+prueba
 # USO 
 Permitir salida grafica en ubuntu, en una consola
 
