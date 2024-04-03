@@ -15,8 +15,7 @@ LANZAR CONTENEDOR
 
 
 # OPCION 2  sin editor en el contenedo
-# Creacion paquete pre lanzamiento docker 
-
+Creacion paquete pre lanzamiento docker 
 Creacion de una carpeta docker_shared
 
 	mkdir docker_shared
