@@ -1,4 +1,5 @@
-prueba
+# Pick_Place
+Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
 # USO 
 Permitir salida grafica en ubuntu, en una consola
 
@@ -93,8 +94,7 @@ Ruta codigos
 
 
 #NO NECESARIO
-# Pick_Place
-Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
+
 
 # Clonar los repositorios desde GitHub en el directorio catkin_ws/src
 RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
