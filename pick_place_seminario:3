@@ -1,0 +1,39 @@
+FROM osrf/ros:noetic-desktop-full
+
+ENV ROS_DISTRO=noetic
+
+# Instalar MoveIt, ROS Control, controladores y LIDAR
+RUN apt update && \
+    apt install -y ros-$ROS_DISTRO-moveit \
+    ros-$ROS_DISTRO-ros-control \
+    ros-$ROS_DISTRO-ros-controllers \
+    python3-pip \
+    git
+
+# Instalar python-catkin-tools
+RUN pip3 install catkin-tools
+
+# Configurar el entorno de ROS y crear el espacio de trabajo de catkin
+RUN /bin/bash -c ". /opt/ros/$ROS_DISTRO/setup.bash; \
+    mkdir -p /catkin_ws/src && \
+    cd /catkin_ws && \
+    catkin init"
+
+   
+    
+# Clone the necessary repositories PICK AND PLACE (and plugin grasp) AND build
+# Clonar los repositorios desde GitHub en el directorio catkin_ws/src
+RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
+    && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
+    && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs 
+#RUN ls -l /catkin_ws/src
+
+
+# CATKIN BUILD  
+RUN /bin/bash -c '. /opt/ros/$ROS_DISTRO/setup.bash; cd /catkin_ws; catkin build'
+
+# Set up the environment  para porbarlo sin tener que ponerlos todo el rato antes de lanzar mi paquete
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
+RUN echo "source catkin_ws/devel/setup.bash" >> ~/.bashrc
+RUN echo 'export GAZEBO_MODEL_PATH=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/models:$GAZEBO_MODEL_PATH' >> ~/.bashrc
+
