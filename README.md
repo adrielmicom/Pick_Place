@@ -70,7 +70,7 @@ Instalar complementos
 
 
 
-#NO NECESARIO
+# NO NECESARIO
 
 Creacion paquete pre lanzamiento docker 
 Creacion de una carpeta docker_shared
