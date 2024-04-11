@@ -93,3 +93,6 @@ Dentro del contenedor
 RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
     && git clone https://github.com/JenniferBuehler/general-message-pkgs.git /catkin_ws/src/Pick_Place/general-message-pkgs \
     && git clone https://github.com/JenniferBuehler/gazebo-pkgs.git /catkin_ws/src/Pick_Place/gazebo-pkgs
+
+# Nvidia GPU 
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
