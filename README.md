@@ -47,8 +47,9 @@ Utilizar junto a devContainer
 
 Instalar complementos 
 
-	code --install-extension oderwat.indent-rainbow ms-python.python PKief.material-icon-theme usernamehw.errorlens christian-kohler.path-intellisense ms-azuretools.vscode-docker donjayamanne.python-extension-pack ms-iot.vscode-ros
-
+	chmod +x install_extensions.sh
+	./install_extensions.sh
+Se tiene que lanzar el scrit desde VsCode conectado al contenedor
 
 
 
