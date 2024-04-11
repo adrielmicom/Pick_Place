@@ -1,49 +1,21 @@
 # Pick_Place
-Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile
+Paquete del ejercicio Pick_Place (Contiene PLugin Grasp) para desarrollo de DockerFile.
+Utilizar junto a devcontainer de VScode
 # USO 
 Permitir salida grafica en ubuntu, en una consola
 
 	xhost +
  
+# IMAGEN adrielmicom/pick_place_seminario:3
 
-# OPCION 1 VS dentro del contenedor
-Descargar imagen seminario
-
-	docker pull adrielmicom/pick_place_seminario:4
-
-LANZAR CONTENEDOR
-
-	docker run -it --gpus all   -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:4
-
-
-# OPCION 2  sin editor en el contenedo
-Creacion paquete pre lanzamiento docker 
-Creacion de una carpeta docker_shared
-
-	mkdir docker_shared
-	cd docker_shared 
-	catkin_create_pkg mipaquete
-		
 Descargar imagen seminario
 
 	docker pull adrielmicom/pick_place_seminario:3
 
 LANZAR CONTENEDOR
 
-	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared/mipaquete:/catkin_ws/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario1 adrielmicom/pick_place_seminario:3
+	docker run -it --gpus all -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario adrielmicom/pick_place_seminario:3
 	
-	docker run -it --gpus all -v /home/adri2/Workspace/docker_shared/mipaquete:/workspace/src/mipaquete -e DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix   -v $HOME/.Xauthority:/root/.Xauthority   -e XAUTHORITY=/root/.Xauthority   --name seminario1 adrielmicom/pick_place_seminario:3
-
-
-Dentro del contenedor
-
-	cd workspace
-	catkin init
-	catkin_make
-	source workspace/devel/setup.bash
-	rosrun mipaquete Pick3.py
- Fin opcion 2
-
 Abrir terminales de tu contenedor
 
 	docker exec -it seminario /bin/bash
@@ -52,11 +24,7 @@ Abrir terminales de tu contenedor
 # Las aplicaciones se abren cuando se lo pides en su terminal.
 abrira gazebo y Rviz
 
-	roslaunch irb120_robotiq85_gazebo warehouse.launch
-	
-abre VSCODE
-
-	code --no-sandbox --user-data-dir=/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src	
+	roslaunch irb120_robotiq85_gazebo warehouse.launch	
 
 SI TE APETECE LANZAR MI CODIGO
 
@@ -71,7 +39,16 @@ lanzar un codigo demo
 	rosrun irb120_robotiq85_gazebo FK.py
 
 Ruta codigos
-	/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src           	
+	/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
+
+
+# Las
+Utilizar junto a devContainer
+
+Instalar complementos 
+
+	code --install-extension streetsidesoftware.code-spell-checker oderwat.indent-rainbow ms-python.python PKief.material-icon-theme usernamehw.errorlens christian-kohler.path-intellisense ms-azuretools.vscode-docker donjayamanne.python-extension-pack ms-iot.vscode-ros
+
 
 
 
@@ -95,6 +72,21 @@ Ruta codigos
 
 #NO NECESARIO
 
+Creacion paquete pre lanzamiento docker 
+Creacion de una carpeta docker_shared
+
+	mkdir docker_shared
+	cd docker_shared 
+	catkin_create_pkg mipaquete
+	
+Dentro del contenedor
+
+	cd workspace
+	catkin init
+	catkin_make
+	source workspace/devel/setup.bash
+	rosrun mipaquete Pick3.py
+		
 
 # Clonar los repositorios desde GitHub en el directorio catkin_ws/src
 RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_Place \
