@@ -96,3 +96,8 @@ RUN git clone https://github.com/adrielmicom/Pick_Place.git /catkin_ws/src/Pick_
 
 # Nvidia GPU 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+ 	sudo docker pull nvidia/cuda:12.4.1-devel-ubuntu22.04
+  
+	nvidia-smi
+
