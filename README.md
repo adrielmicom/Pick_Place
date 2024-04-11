@@ -42,7 +42,7 @@ Ruta codigos
 	/catkin_ws/src/Pick_Place/irb120_robotiq85/irb120_robotiq85_gazebo/src
 
 
-# Las
+#  Uso junto DevCOntainer
 Utilizar junto a devContainer
 
 Instalar complementos 
