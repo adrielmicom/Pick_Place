@@ -47,7 +47,7 @@ Utilizar junto a devContainer
 
 Instalar complementos 
 
-	code --install-extension streetsidesoftware.code-spell-checker oderwat.indent-rainbow ms-python.python PKief.material-icon-theme usernamehw.errorlens christian-kohler.path-intellisense ms-azuretools.vscode-docker donjayamanne.python-extension-pack ms-iot.vscode-ros
+	code --install-extension oderwat.indent-rainbow ms-python.python PKief.material-icon-theme usernamehw.errorlens christian-kohler.path-intellisense ms-azuretools.vscode-docker donjayamanne.python-extension-pack ms-iot.vscode-ros
 
 
 

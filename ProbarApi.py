@@ -20,20 +20,18 @@ def main():
     print(f"los objetos son: {objetos}")
 
 
-    """
-    pose1=clase.pose2msg(0, 0, 0, 0.5, 0.0, 0.6)
+    
+    pose1=clase.pose2msg(0, 0, 0, 0.6, 0.19, 0.18)
     pose2=clase.pose2msg(0,45,0,0.6,0,0.35)
     print(f"La posición1 {pose1}")
     msg1=clase.msg2pose(pose1)
     print(f"El msg1 {msg1}")
 
-    clase.place(pose)
+    """
+    print("move pose arm")
+    clase.move_pose_arm(pose2)
     rospy.sleep(1)
-    clase.move_pose_arm(pose)
-    rospy.sleep(1)
-    clase.place(pose2)
-    rospy.sleep(1)
-    print("move joint")
+    print("move joint_arm")
     clase.move_joint_arm(0, 0, 0, 0.5, 0.0, 0.6)
     rospy.sleep(1)
     print("move hand")
@@ -41,6 +39,20 @@ def main():
     rospy.sleep(1)
     print("VUELTA A CASA")
     clase.back_to_home()
+    rospy.sleep(1)
+    """
+
+    print("PLACE CON POSE")
+    clase.place(pose)
+    rospy.sleep(1)
+    print("move pose arm con POSE")
+    clase.move_pose_arm(pose)
+    rospy.sleep(1)
+    print("PLACE CON POSE2")
+    clase.place(pose2)
+    rospy.sleep(1)
+    clase.back_to_home()
+
     """
     print("vamos posicion 1")
     poseprueba=clase.pose2msg(0, 0, 0, 0.5, 0.2,0.6)
@@ -56,7 +68,7 @@ def main():
     print(pose.position.y)
     pose.position.z += 0.16
     clase.pickup(object_name, poseprueba)
-
+    """
 
 
 
